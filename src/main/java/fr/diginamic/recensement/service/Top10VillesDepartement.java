@@ -9,6 +9,10 @@ public class Top10VillesDepartement {
 
 	Scanner scanner = new Scanner(System.in);
 
+	/**Méthode permettant d'afficher les 10 villes les plus peuplées d'un département saisie par l'utilisateur
+	 * l'utilisateur doit saisir le code du département
+	 * @param scanner
+	 */
 	public static void traiter( Scanner scanner) {
 		System.out.println("Veuillez saisir le code du département : ");
 		String choix = scanner.next();

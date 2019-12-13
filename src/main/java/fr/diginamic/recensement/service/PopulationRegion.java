@@ -10,6 +10,10 @@ import fr.diginamic.recensement.utils.Connect;
 public class PopulationRegion {
 	static Scanner scanner = new Scanner(System.in);
 	
+	/**méthode permetant de selectionner  la population d'une région choisie par l'utilisateur
+	 * l'utilisateur doit saisir le nom de la région
+	 * @param choix
+	 */
 	public static void traiter ( int choix){
 		
 		System.out.println("veuillez saisir une Région");

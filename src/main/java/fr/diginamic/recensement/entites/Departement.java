@@ -2,9 +2,19 @@ package fr.diginamic.recensement.entites;
 
 public class Departement {
 	
+	/**
+	 * code du département de type String
+	 */
 	private String code;
+	/**
+	 * population du département de type int
+	 */
 	private int population;
 	
+	/**Constructeur de la classe Département
+	 * @param code
+	 * @param population
+	 */
 	public Departement(String code, int population) {
 		super();
 		this.code = code;

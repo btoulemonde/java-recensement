@@ -6,6 +6,9 @@ import fr.diginamic.recensement.entites.Region;
 
 public class Top10RégionPopulation {
 
+	/**
+	 * Méthode permettant d'afficher les 10 régions les plus peuplées de France.
+	 */
 	public static void traiter() {
 		System.out.println("Les 10 régions les plus peuplées de France sont : ");
 		RegionDaoJdbc regionDao = new RegionDaoJdbc();

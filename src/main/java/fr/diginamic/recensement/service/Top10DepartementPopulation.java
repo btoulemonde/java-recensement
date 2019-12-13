@@ -5,8 +5,10 @@ import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 import fr.diginamic.recensement.entites.Departement;
 
 public class Top10DepartementPopulation {
-	public static void traiter() {
-		
+	/**
+	 * méthode permettant d'afficher les 10 départements les plus peuplés de France.
+	 */
+	public static void traiter() { 
 		System.out.println("Les 10 départements les plus peuplés de France sont : ");
 
 		DepartementDaoJdbc departementDao = new DepartementDaoJdbc();

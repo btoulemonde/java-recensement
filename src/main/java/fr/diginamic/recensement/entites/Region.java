@@ -1,10 +1,23 @@
 package fr.diginamic.recensement.entites;
 
 public class Region {
+	/**
+	 * code de la région de type String
+	 */
 	private String code;
+	/**
+	 * population de la région de type int
+	 */
 	private int population;
+	/**
+	 * nom de la région de type String
+	 */
 	private String nomRegion;
 	
+	/**constructeur de la classe Region
+	 * @param population de type int
+	 * @param nomRegion de type String
+	 */
 	public Region(int population, String nomRegion) {
 		super();
 		this.population = population;

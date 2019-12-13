@@ -6,8 +6,12 @@ import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 
 public class PopulationDepartement {
 	
+
 Scanner scanner = new Scanner(System.in);
 	
+	/**méthode statique permettant de selectionner la population d'un département dont l'utilsateur saisie le code
+	 * @param scanner
+	 */
 	public static void traiter(Scanner scanner){
 		
 		System.out.println("Veuillez saisir le numéro de département : ");

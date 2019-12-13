@@ -9,6 +9,9 @@ public class Top10VillesFrance {
 	
 	Scanner scanner = new Scanner (System.in);
 	
+	/**
+	 * Méthode statique permettant d'afficher les 10 pplus grandes villes de France.
+	 */
 	public static void traiter(){
 		
 		VilleDaoJdbc villeDao = new VilleDaoJdbc();

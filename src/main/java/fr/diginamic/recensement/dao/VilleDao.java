@@ -6,29 +6,22 @@ import fr.diginamic.recensement.entites.Ville;
 
 public interface VilleDao {
 	
-	/**
-	 * @return
-	 */
-	List<Ville> extraire();
 	
 	/**méthode pour insérer toutes les villes vers la base de donnée.
 	 * @param List<Ville> : liste des villes
 	 */
 	void insert(List<Ville> villes);
 	
-	/**
-	 * @param designation
-	 * @param nouveauPrix
-	 * @return
-	 */
-	int update(String designation, String nouveauPrix);
 	
-	/**
-	 * @param ville
-	 * @return
+	/**Méthode permettant d'extraire la population d'une ville
+	 * @param ville de type String
+	 * @return la population de type int
 	 */
-	boolean delete(Ville ville);
-	
 	int populationVille(String ville);
+	
+	/**Méthoded permettant de classer les villes de France par ordre decroissant de popualtion
+	 * @return liste de ville classées
+	 */
+	public List<Ville> topVille();
 
 }

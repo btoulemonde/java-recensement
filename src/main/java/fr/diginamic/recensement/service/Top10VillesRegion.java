@@ -9,6 +9,10 @@ public class Top10VillesRegion {
 
 	Scanner scanner = new Scanner(System.in);
 
+	/**Méthode statique permettant d'afficher les 10 villes les plus peuplées d'une région saisie par l'utilisateur
+	 * l'utilisateur doit saisir le nom de la région
+	 * @param scanner
+	 */
 	public static void traiter(Scanner scanner) {
 		System.out.println("Veuillez saisir le nom d'une région : ");
 		String choix = scanner.next();

@@ -4,18 +4,44 @@ package fr.diginamic.recensement.entites;
 
 public class Ville  {
 
+	/**
+	 * Code de la région de type String
+	 */
 	private String codeRegion;
+	/**
+	 * nom de la région de type String
+	 */
 	private String nomRegion;
+	/**
+	 * code du département de type String
+	 */
 	private String codeDepartement;
+	/**
+	 * nom de la commune de type String
+	 */
 	private String nomCommune;
+	/**
+	 * population totale de la ville de type int
+	 */
 	private int population;
 
+	/**Constructeur
+	 * @param nomCommune
+	 * @param population
+	 */
 	public Ville(String nomCommune, int population) {
 		super();
 		this.nomCommune = nomCommune;
 		this.population = population;
 	}
 
+	/**Constructeur
+	 * @param codeRegion
+	 * @param nomRegion
+	 * @param codeDepartement
+	 * @param nomCommune
+	 * @param population
+	 */
 	public Ville(String codeRegion, String nomRegion, String codeDepartement, String nomCommune,int population) {
 		super();
 		this.codeRegion=codeRegion;

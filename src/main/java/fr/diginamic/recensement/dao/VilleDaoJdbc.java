@@ -19,18 +19,12 @@ public class VilleDaoJdbc implements VilleDao {
 		connexion = Connect.getConnection();
 	}
 
-	@Override
-	public List<Ville> extraire() {
-		// TODO Auto-generated method stub
-		return null;
-	}
 
 	/* (non-Javadoc)
 	 * @see fr.diginamic.recensement.dao.VilleDao#insert(java.util.List)
 	 */
 	@Override
 	public void insert(List<Ville> villes) {
-		 connexion = Connect.getConnection();
 		try {
 
 			for (Ville ville : villes) {
@@ -48,7 +42,12 @@ public class VilleDaoJdbc implements VilleDao {
 			System.out.println(e.getMessage());;
 		}
 	}
+
 	
+	/* (non-Javadoc)
+	 * @see fr.diginamic.recensement.dao.VilleDao#topVille()
+	 */
+	@Override
 	public List<Ville> topVille(){
 		
 		List<Ville> villes = new ArrayList<>();
@@ -68,22 +67,7 @@ public class VilleDaoJdbc implements VilleDao {
 		return villes;
 	}
 
-	public int update(String designation, String nouveauPrix) {
-		// TODO Auto-generated method stub
-		return 0;
-	}
 
-	@Override
-	public boolean delete(Ville ville) {
-		try {
-			statement = connexion.prepareStatement("DELETE FROM VILLE WHERE NOM_VILLE =?");
-			statement.setString(1, ville.getNomCommune());
-			statement.executeUpdate();
-		} catch (SQLException e) {
-			System.out.println("echec de la suppression");
-		}
-		return false;
-	}
 
 	@Override
 	public int populationVille(String ville) {

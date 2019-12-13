@@ -7,8 +7,14 @@ import java.util.List;
 
 import org.apache.commons.io.FileUtils;
 
+import fr.diginamic.recensement.entites.Recensement;
+
 public class LectureFichier {
 
+	/**méthode permettant de lire les lignes du fichier csv contennat les données de recensement.
+	 * @param cheminFichier chemin du fichier csv
+	 * @return 
+	 */
 	public static Recensement lire(String cheminFichier) {
 		Recensement recensement = new Recensement();
 		

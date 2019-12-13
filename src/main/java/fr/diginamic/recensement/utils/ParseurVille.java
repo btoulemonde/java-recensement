@@ -1,9 +1,14 @@
 package fr.diginamic.recensement.utils;
 
+import fr.diginamic.recensement.entites.Recensement;
 import fr.diginamic.recensement.entites.Ville;
 
 public class ParseurVille {
 
+	/**méthode pour spliter les lignes afin de récupérer les morceaux qui nous intérèsse pour exploiter les données de recensement.
+	 * @param recensement
+	 * @param ligne
+	 */
 	public static void ajoutLigne(Recensement recensement, String ligne) {
 		
 		// On commence par découper la ligne en morceaux sur la base du caractère séparateur « ; » . De plus on ne récupère que les morceaux qui nous intéressent. En l’occurrence on ignore les morceaux 3 et 4 dont on a pas besoin dans le TP
