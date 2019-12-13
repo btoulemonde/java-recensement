@@ -10,14 +10,20 @@ public class Ville  {
 	private String nomCommune;
 	private int population;
 
-	public Ville(String codeRegion, String nomRegion, String codeDepartement, String nomCommune, int population) {
+	public Ville(String nomCommune, int population) {
 		super();
-		this.codeRegion = codeRegion;
-		this.nomRegion = nomRegion;
-		this.codeDepartement = codeDepartement;
 		this.nomCommune = nomCommune;
 		this.population = population;
 	}
+
+	public Ville(String codeRegion, String nomRegion, String codeDepartement, String nomCommune,int population) {
+		super();
+		this.codeRegion=codeRegion;
+		this.nomRegion = nomRegion;
+		this.codeDepartement=codeDepartement;
+		this.nomCommune = nomCommune;
+		this.population = population;
+		}
 
 	/*
 	 * (non-Javadoc)
@@ -26,7 +32,7 @@ public class Ville  {
 	 */
 	@Override
 	public String toString() {
-		return nomCommune + " " + codeDepartement + " " + nomRegion + " -> " + population;
+		return nomCommune + " : " + population + " habitants.";
 	}
 
 	

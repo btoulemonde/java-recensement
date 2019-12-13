@@ -7,6 +7,9 @@ import fr.diginamic.recensement.service.PopulationRegion;
 import fr.diginamic.recensement.service.PopulationVille;
 import fr.diginamic.recensement.service.Top10DepartementPopulation;
 import fr.diginamic.recensement.service.Top10RégionPopulation;
+import fr.diginamic.recensement.service.Top10VillesDepartement;
+import fr.diginamic.recensement.service.Top10VillesFrance;
+import fr.diginamic.recensement.service.Top10VillesRegion;
 
 public class Application {
 
@@ -44,18 +47,15 @@ public class Application {
 			case 5:
 				Top10DepartementPopulation.traiter();
 				break;
-//			case 6:
-//				Top10VillesDepartement top10VillesDepartement = new Top10VillesDepartement();
-//				top10VillesDepartement.traiter(recensement, scanner);
-//				break;
-//			case 7:
-//				Top10VillesRegion top10VillesRegion = new Top10VillesRegion();
-//				top10VillesRegion.traiter(recensement, scanner);
-//				break;
-//			case 8:
-//				Top10VillesFrance top10VillesFrance = new Top10VillesFrance();
-//				top10VillesFrance.traiter(recensement, scanner);
-//				break;
+			case 6:
+				Top10VillesDepartement.traiter(scanner);
+				break;
+			case 7:
+				Top10VillesRegion.traiter(scanner);
+				break;
+			case 8:
+				Top10VillesFrance.traiter();
+				break;
 			}
 		}	while (choix != 9);
 	}

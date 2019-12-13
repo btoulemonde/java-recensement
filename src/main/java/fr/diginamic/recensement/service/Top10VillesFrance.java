@@ -1,22 +1,18 @@
 package fr.diginamic.recensement.service;
 
 import java.util.Scanner;
-
+import fr.diginamic.recensement.dao.VilleDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
-import fr.diginamic.recensement.service.comparator.Top10VilleComparator;
-import fr.diginamic.recensement.utils.Recensement;
-
-import java.util.Collections;
 import java.util.List;
 
 public class Top10VillesFrance {
 	
 	Scanner scanner = new Scanner (System.in);
 	
-	public void traiter(Recensement recensement, Scanner scanner){
-		List<Ville> villes = recensement.getVilles();
+	public static void traiter(){
 		
-		Collections.sort(villes, new Top10VilleComparator());
+		VilleDaoJdbc villeDao = new VilleDaoJdbc();
+		List<Ville> villes = villeDao.topVille();
 		for (int i =0; i<10; i++){
 			System.out.println(villes.get(i));
 		}

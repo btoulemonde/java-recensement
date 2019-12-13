@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 import fr.diginamic.recensement.entites.Ville;
@@ -29,7 +30,7 @@ public class VilleDaoJdbc implements VilleDao {
 	 */
 	@Override
 	public void insert(List<Ville> villes) {
-		// connexion = Connect.getConnection();
+		 connexion = Connect.getConnection();
 		try {
 
 			for (Ville ville : villes) {
@@ -46,6 +47,25 @@ public class VilleDaoJdbc implements VilleDao {
 			System.out.println("echec de l'ajout");
 			System.out.println(e.getMessage());;
 		}
+	}
+	
+	public List<Ville> topVille(){
+		
+		List<Ville> villes = new ArrayList<>();
+		result = Connect.select("SELECT * FROM VILLE ORDER BY POPULATION DESC");
+		
+		try {
+			while(result.next()){
+				int population = result.getInt("POPULATION");
+				String nom = result.getString("NOM_Ville");
+				Ville ville = new Ville( nom, population);
+				villes.add(ville);
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		return villes;
 	}
 
 	public int update(String designation, String nouveauPrix) {
@@ -68,7 +88,7 @@ public class VilleDaoJdbc implements VilleDao {
 	@Override
 	public int populationVille(String ville) {
 		int populationVille = 0;
-		result = Connect.select("SELECT POPULATION FROM VILLE WHERE NOM_VILLE+'" + ville + "' ");
+		result = Connect.select("SELECT * FROM VILLE WHERE NOM_VILLE=+'" + ville + "'");
 		try {
 			while(result.next()){
 				populationVille = result.getInt("POPULATION");
