@@ -11,10 +11,10 @@ public interface VilleDao {
 	 */
 	List<Ville> extraire();
 	
-	/**
-	 * @param ville
+	/**méthode pour insérer toutes les villes vers la base de donnée.
+	 * @param List<Ville> : liste des villes
 	 */
-	void insert(Ville ville);
+	void insert(List<Ville> villes);
 	
 	/**
 	 * @param designation

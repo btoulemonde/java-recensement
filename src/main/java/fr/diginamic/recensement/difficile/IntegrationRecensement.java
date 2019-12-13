@@ -12,12 +12,10 @@ public class IntegrationRecensement {
 		List<Ville> villes = recensement.getVilles();
 		VilleDaoJdbc villeDao = new VilleDaoJdbc();
 		
-		for(Ville ville : villes){
-			
-			villeDao.insert(ville);
-			
-		}
 		
+		villeDao.insert(villes);
+		
+		Connect.connexionClose();
 		
 
 	}

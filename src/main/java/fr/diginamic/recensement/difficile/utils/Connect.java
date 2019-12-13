@@ -16,7 +16,13 @@ public class Connect {
 	private static String password = bundle.getString("password");
 	private static Connection connexion;
 	
+	
 
+	
+
+	/**Méthode permttant de charger le driver mariadb
+	 * @return retourne un boolean true si le driver est chargé
+	 */
 	public static boolean driver() {
 
 		try {
@@ -28,6 +34,9 @@ public class Connect {
 		return true;
 	}
 
+	/**Méthode pour la connexion à la base de donnée dont les paramètres sont saisies dans le fichier database.properties
+	 * @return retourne un type Connection
+	 */
 	public static Connection getConnection() {
 		if (driver() != true) {
 			driver();
@@ -35,18 +44,23 @@ public class Connect {
 		
 		try {
 			connexion = DriverManager.getConnection(url, user, password);
+			System.out.println("ouverture connexion");
 		} catch (SQLException e) {
 			System.out.println("echec de l'ouverture de la base de données");
 		}
 		return connexion;
 	}
 
+	/**Méthode pour créer, mettre à jour ou supprimer des éléments dans la base de donnée
+	 * @param sql = commande SQL
+	 * @return un attribut de type PreparedStatement
+	 */
 	public static PreparedStatement cud(String sql) {
 
-		Connection connexion = null;
+//		Connection connexion = null;
 		PreparedStatement statement = null;
 		try {
-			connexion = getConnection();
+//			connexion = getConnection();
 
 			statement = connexion.prepareStatement(sql);
 			statement.executeUpdate();
@@ -67,9 +81,7 @@ public class Connect {
 				}
 				connexion.commit();
 				
-					if (connexion != null) {
-						connexion.close();
-					}
+					
 				
 			} catch (SQLException e) {
 
@@ -80,7 +92,24 @@ public class Connect {
 		return statement;
 	}
 
+	/**Méthode pour fermer la connexion à la base de donnée
+	 * 
+	 */
+	public static void connexionClose(){
+		try {
+			if (connexion != null) {
+				connexion.close();
+				System.out.println("fermeture connexion");
+			}
+		} catch (SQLException e) {
+			System.out.println("echec de la fermeture de connexion");
+		}
+	}
 
+	/**Méthode pour selectionner des éléments dans la base de donnée
+	 * @param sql = commande SQL
+	 * @return resulSet
+	 */
 	public static ResultSet select(String sql) {
 		Connection connexion = null;
 		Statement statement = null;
@@ -96,6 +125,7 @@ public class Connect {
 			try {
 				if (statement != null) {
 					statement.close();
+					System.out.println("connexion fermée");
 				}
 				if (connexion != null) {
 					connexion.close();
