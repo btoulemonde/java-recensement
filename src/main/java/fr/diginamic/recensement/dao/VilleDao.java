@@ -2,7 +2,7 @@ package fr.diginamic.recensement.dao;
 
 import java.util.List;
 
-import fr.diginamic.recensement.facile.Ville;
+import fr.diginamic.recensement.entites.Ville;
 
 public interface VilleDao {
 	

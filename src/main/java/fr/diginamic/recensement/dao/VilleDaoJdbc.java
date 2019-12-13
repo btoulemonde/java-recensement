@@ -5,8 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.SQLException;
 import java.util.List;
 
-import fr.diginamic.recensement.difficile.utils.Connect;
-import fr.diginamic.recensement.facile.Ville;
+import fr.diginamic.recensement.entites.Ville;
+import fr.diginamic.recensement.utils.Connect;
 
 public class VilleDaoJdbc implements VilleDao {
 	PreparedStatement statement;
@@ -43,7 +43,7 @@ public class VilleDaoJdbc implements VilleDao {
 			}
 		} catch (SQLException e) {
 			System.out.println("echec de l'ajout");
-			;
+			System.out.println(e.getMessage());;
 		}
 	}
 

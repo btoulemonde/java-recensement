@@ -1,4 +1,4 @@
-package fr.diginamic.recensement.difficile.utils;
+package fr.diginamic.recensement.utils;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -17,7 +17,9 @@ public class Connect {
 	private static Connection connexion;
 	
 	
-
+	public Connect(){
+		connexion = getConnection();
+	}
 	
 
 	/**Méthode permttant de charger le driver mariadb
@@ -43,8 +45,10 @@ public class Connect {
 		}
 		
 		try {
+			if (connexion == null){
 			connexion = DriverManager.getConnection(url, user, password);
 			System.out.println("ouverture connexion");
+			}
 		} catch (SQLException e) {
 			System.out.println("echec de l'ouverture de la base de données");
 		}
@@ -125,10 +129,7 @@ public class Connect {
 			try {
 				if (statement != null) {
 					statement.close();
-					System.out.println("connexion fermée");
-				}
-				if (connexion != null) {
-					connexion.close();
+					
 				}
 			} catch (SQLException e) {
 
