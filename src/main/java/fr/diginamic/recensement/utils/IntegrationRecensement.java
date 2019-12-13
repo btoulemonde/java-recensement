@@ -9,7 +9,7 @@ import fr.diginamic.recensement.entites.Ville;
 
 public class IntegrationRecensement {
 
-	public IntegrationRecensement(){
+	public  static void main(String[] args){
 		Recensement recensement = LectureFichier.lire("C:/work/recensement population 2016.csv");
 		List<Ville> villes = recensement.getVilles();
 	

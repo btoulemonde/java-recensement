@@ -28,5 +28,7 @@ public interface VilleDao {
 	 * @return
 	 */
 	boolean delete(Ville ville);
+	
+	int populationVille(String ville);
 
 }

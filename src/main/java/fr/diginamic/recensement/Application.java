@@ -7,18 +7,12 @@ import fr.diginamic.recensement.service.PopulationRegion;
 import fr.diginamic.recensement.service.PopulationVille;
 import fr.diginamic.recensement.service.Top10DepartementPopulation;
 import fr.diginamic.recensement.service.Top10RégionPopulation;
-import fr.diginamic.recensement.service.Top10VillesDepartement;
-import fr.diginamic.recensement.service.Top10VillesFrance;
-import fr.diginamic.recensement.service.Top10VillesRegion;
-import fr.diginamic.recensement.utils.LectureFichier;
-import fr.diginamic.recensement.utils.Recensement;
 
 public class Application {
 
 	public static void main(String[] args) {
 		
 		Scanner scanner = new Scanner(System.in);
-		Recensement recensement = LectureFichier.lire("C:/work/recensement population 2016.csv");
 		int choix = 0;
 		do {
 			System.out.println(" ------------------MENU----------------------");
@@ -36,37 +30,32 @@ public class Application {
 
 			switch (choix) {
 			case 1:
-				PopulationVille populationVille = new PopulationVille();
-				populationVille.traiter(recensement, scanner);
+				PopulationVille.traiter(scanner);
 				break;
 			case 2:
-				PopulationDepartement populationDepartement = new PopulationDepartement();
-				populationDepartement.traiter(recensement, scanner);
+				PopulationDepartement.traiter(scanner);
 				break;
 			case 3:
-				PopulationRegion populationRegion = new PopulationRegion();
-				populationRegion.traiter(recensement, scanner);
+				PopulationRegion.traiter(choix);
 				break;
 			case 4:
-				Top10RégionPopulation top10Region = new Top10RégionPopulation();
-				top10Region.traiter(recensement);
+				Top10RégionPopulation.traiter();
 				break;
 			case 5:
-				Top10DepartementPopulation top10Departement = new Top10DepartementPopulation();
-				top10Departement.traiter(recensement);
+				Top10DepartementPopulation.traiter();
 				break;
-			case 6:
-				Top10VillesDepartement top10VillesDepartement = new Top10VillesDepartement();
-				top10VillesDepartement.traiter(recensement, scanner);
-				break;
-			case 7:
-				Top10VillesRegion top10VillesRegion = new Top10VillesRegion();
-				top10VillesRegion.traiter(recensement, scanner);
-				break;
-			case 8:
-				Top10VillesFrance top10VillesFrance = new Top10VillesFrance();
-				top10VillesFrance.traiter(recensement, scanner);
-				break;
+//			case 6:
+//				Top10VillesDepartement top10VillesDepartement = new Top10VillesDepartement();
+//				top10VillesDepartement.traiter(recensement, scanner);
+//				break;
+//			case 7:
+//				Top10VillesRegion top10VillesRegion = new Top10VillesRegion();
+//				top10VillesRegion.traiter(recensement, scanner);
+//				break;
+//			case 8:
+//				Top10VillesFrance top10VillesFrance = new Top10VillesFrance();
+//				top10VillesFrance.traiter(recensement, scanner);
+//				break;
 			}
 		}	while (choix != 9);
 	}

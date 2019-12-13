@@ -5,9 +5,10 @@ public class Departement {
 	private String code;
 	private int population;
 	
-	public Departement(String code) {
+	public Departement(String code, int population) {
 		super();
 		this.code = code;
+		this.population = population;
 	}
 
 	/* (non-Javadoc)

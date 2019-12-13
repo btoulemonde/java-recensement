@@ -2,6 +2,7 @@ package fr.diginamic.recensement.dao;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
 
@@ -9,8 +10,8 @@ import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.utils.Connect;
 
 public class VilleDaoJdbc implements VilleDao {
-	PreparedStatement statement;
-
+	private PreparedStatement statement;
+	private ResultSet result;
 	private static Connection connexion;
 
 	public VilleDaoJdbc() {
@@ -62,6 +63,23 @@ public class VilleDaoJdbc implements VilleDao {
 			System.out.println("echec de la suppression");
 		}
 		return false;
+	}
+
+	@Override
+	public int populationVille(String ville) {
+		int populationVille = 0;
+		result = Connect.select("SELECT POPULATION FROM VILLE WHERE NOM_VILLE+'" + ville + "' ");
+		try {
+			while(result.next()){
+				populationVille = result.getInt("POPULATION");
+			}
+		} catch (SQLException e) {
+			System.out.println(e.getMessage());
+			e.printStackTrace();
+		}
+		
+		
+		return populationVille;
 	}
 
 }

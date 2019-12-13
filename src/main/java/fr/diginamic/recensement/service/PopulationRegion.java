@@ -1,29 +1,37 @@
 package fr.diginamic.recensement.service;
 
 
-import java.util.List;
+import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.Scanner;
-
-import fr.diginamic.recensement.entites.Ville;
-import fr.diginamic.recensement.utils.Recensement;
+import fr.diginamic.recensement.dao.RegionDaoJdbc;
+import fr.diginamic.recensement.utils.Connect;
 
 public class PopulationRegion {
-	Scanner scanner = new Scanner(System.in);
+	static Scanner scanner = new Scanner(System.in);
 	
-	public void traiter (Recensement recensement, Scanner scanner){
+	public static void traiter ( int choix){
 		
 		System.out.println("veuillez saisir une Région");
-		String choix = scanner.next();
-		List<Ville> villes= recensement.getVilles();
+		String choixUser = scanner.next();
+		choix = Integer.parseInt(choixUser);
+		RegionDaoJdbc regionDao = new RegionDaoJdbc();
 		
-		int populationRegion = 0;
-		for (Ville ville : villes){
-			if(ville.getNomRegion().equalsIgnoreCase(choix)){
-				populationRegion += ville.getPopulation();
+		int populationRegion = regionDao.populationRegion(choix);
+		
+		ResultSet result = Connect.select("Select NOM_REGION FROM REGION WHERE CODE_REGION =" + choix);
+		String nomRegion = null;
+		try {
+			while(result.next()){
+				nomRegion = result.getString("NOM_REGION");
 			}
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
 		
-		System.out.println("la population de la région choisie est de " + populationRegion + " habitants");
+		
+		System.out.println("la population de la région "+ nomRegion +"  est de " + populationRegion + " habitants");
 
 	}
 

@@ -3,10 +3,12 @@ package fr.diginamic.recensement.entites;
 public class Region {
 	private String code;
 	private int population;
+	private String nomRegion;
 	
-	public Region(String code) {
+	public Region(int population, String nomRegion) {
 		super();
-		this.code = code;
+		this.population = population;
+		this.nomRegion= nomRegion;
 	}
 
 	/* (non-Javadoc)
@@ -14,7 +16,7 @@ public class Region {
 	 */
 	@Override
 	public String toString() {
-		return "Region [code=" + code + ", population=" + population + "]";
+		return nomRegion+" : " + population+" habitants.";
 	}
 
 	/**
@@ -43,6 +45,20 @@ public class Region {
 	 */
 	public void setPopulation(int population) {
 		this.population = population;
+	}
+
+	/** Getter
+	 * @return the nomRegion
+	 */
+	public String getNomRegion() {
+		return nomRegion;
+	}
+
+	/** Setter
+	 * @param nomRegion the nomRegion to set
+	 */
+	public void setNomRegion(String nomRegion) {
+		this.nomRegion = nomRegion;
 	}
 	
 	
