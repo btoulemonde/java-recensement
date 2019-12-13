@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.Scanner;
 import fr.diginamic.recensement.dao.RegionDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
+import fr.diginamic.recensement.utils.Connect;
 
 public class Top10VillesRegion {
 
@@ -22,7 +23,7 @@ public class Top10VillesRegion {
 		for (int i = 0; i < 10; i++) {
 			System.out.println(villes.get(i));
 		}
-
+		Connect.connexionClose();
 	}
 }
 

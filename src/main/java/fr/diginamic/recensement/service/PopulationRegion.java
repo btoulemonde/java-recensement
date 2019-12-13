@@ -36,7 +36,7 @@ public class PopulationRegion {
 		
 		
 		System.out.println("la population de la région "+ nomRegion +"  est de " + populationRegion + " habitants");
-
+		Connect.connexionClose();
 	}
 
 }

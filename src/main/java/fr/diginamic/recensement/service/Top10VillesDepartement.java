@@ -4,6 +4,7 @@ import java.util.Scanner;
 import java.util.List;
 import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
+import fr.diginamic.recensement.utils.Connect;
 
 public class Top10VillesDepartement {
 
@@ -22,6 +23,6 @@ public class Top10VillesDepartement {
 		for (int i = 0; i < 10; i++) {
 			System.out.println(villes.get(i));
 		}
-
+		Connect.connexionClose();
 	}
 }

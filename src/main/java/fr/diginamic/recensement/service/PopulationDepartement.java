@@ -3,6 +3,7 @@ package fr.diginamic.recensement.service;
 
 import java.util.Scanner;
 import fr.diginamic.recensement.dao.DepartementDaoJdbc;
+import fr.diginamic.recensement.utils.Connect;
 
 public class PopulationDepartement {
 	
@@ -20,6 +21,7 @@ Scanner scanner = new Scanner(System.in);
 		DepartementDaoJdbc departementDao = new DepartementDaoJdbc();
 		int populationDep = departementDao.populationDep(choix);
 		System.out.println("la population du département "+choix+" est de " + populationDep + " habitants");
+		Connect.connexionClose();
 	}
 
 }
