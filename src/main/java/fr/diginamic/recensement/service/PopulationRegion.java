@@ -7,16 +7,19 @@ import java.util.Scanner;
 import fr.diginamic.recensement.dao.RegionDaoJdbc;
 import fr.diginamic.recensement.utils.Connect;
 
+/** Classe permettant d'appler la méthode populationRegion et de demander à l'utilisateur de saisir 
+ * @author bapti
+ *
+ */
 public class PopulationRegion {
-	static Scanner scanner = new Scanner(System.in);
 	
 	/**méthode permetant de selectionner  la population d'une région choisie par l'utilisateur
 	 * l'utilisateur doit saisir le nom de la région
 	 * @param choix
 	 */
-	public static void traiter ( int choix){
-		
-		System.out.println("veuillez saisir une Région");
+	public static void traiter ( Scanner scanner){
+		int choix = 0;
+		System.out.println("veuillez saisir un code région");
 		String choixUser = scanner.next();
 		choix = Integer.parseInt(choixUser);
 		RegionDaoJdbc regionDao = new RegionDaoJdbc();

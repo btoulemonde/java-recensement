@@ -5,9 +5,12 @@ import java.util.Scanner;
 import fr.diginamic.recensement.dao.RegionDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
 
+/**classe permettant d'appeler la méthode top Ville et l'appliquer avec une région saisie par l'utilisateur
+ * @author bapti
+ *
+ */
 public class Top10VillesRegion {
 
-	Scanner scanner = new Scanner(System.in);
 
 	/**Méthode statique permettant d'afficher les 10 villes les plus peuplées d'une région saisie par l'utilisateur
 	 * l'utilisateur doit saisir le nom de la région

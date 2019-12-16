@@ -4,6 +4,10 @@ import java.util.List;
 import fr.diginamic.recensement.dao.RegionDaoJdbc;
 import fr.diginamic.recensement.entites.Region;
 
+/**classe permettant d'appeler la méthode extraire
+ * @author bapti
+ *
+ */
 public class Top10RégionPopulation {
 
 	/**

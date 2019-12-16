@@ -1,17 +1,19 @@
 package fr.diginamic.recensement.service;
 
-import java.util.Scanner;
 import fr.diginamic.recensement.dao.VilleDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
 
 import java.util.List;
 
+/**classe permettant d'appeler la méthode topVille
+ * @author bapti
+ *
+ */
 public class Top10VillesFrance {
 
-	Scanner scanner = new Scanner(System.in);
 
 	/**
-	 * Méthode statique permettant d'afficher les 10 pplus grandes villes de
+	 * Méthode statique permettant d'afficher les 10 plus grandes villes de
 	 * France.
 	 */
 	public static void traiter() {

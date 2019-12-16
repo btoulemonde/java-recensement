@@ -4,6 +4,10 @@ import java.util.List;
 import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 import fr.diginamic.recensement.entites.Departement;
 
+/** classe permettant d'appler la méthode extraire 
+ * @author bapti
+ *
+ */
 public class Top10DepartementPopulation {
 	/**
 	 * méthode permettant d'afficher les 10 départements les plus peuplés de France.

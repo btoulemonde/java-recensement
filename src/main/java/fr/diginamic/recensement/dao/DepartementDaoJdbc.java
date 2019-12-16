@@ -129,6 +129,7 @@ public class DepartementDaoJdbc implements DepartementDao {
 				population = result.getInt("SUM(POPULATION)");
 
 			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

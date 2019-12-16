@@ -11,6 +11,10 @@ import fr.diginamic.recensement.entites.Region;
 import fr.diginamic.recensement.entites.Ville;
 import fr.diginamic.recensement.utils.Connect;
 
+/** implementation de RegionDao
+ * @author bapti
+ *
+ */
 public class RegionDaoJdbc implements RegionDao {
 
 	private PreparedStatement statement;

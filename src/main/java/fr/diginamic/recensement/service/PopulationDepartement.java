@@ -5,10 +5,13 @@ import java.util.Scanner;
 import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 import fr.diginamic.recensement.utils.ValeurNul;
 
+/** Classe permenttant de traiter la méthode populationDep et de demander à l'utilisateur de saisir un code département
+ * @author bapti
+ *
+ */
 public class PopulationDepartement {
 	
 
-Scanner scanner = new Scanner(System.in);
 	
 	/**méthode statique permettant de selectionner la population d'un département dont l'utilsateur saisie le code
 	 * @param scanner

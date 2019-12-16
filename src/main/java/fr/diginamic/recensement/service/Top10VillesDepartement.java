@@ -4,9 +4,12 @@ import java.util.Scanner;
 import java.util.List;
 import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
+/**classe permettant d'appeler la méthode topVille pour un département saisi par l'utilisateur
+ * @author bapti
+ *
+ */
 public class Top10VillesDepartement {
 
-	Scanner scanner = new Scanner(System.in);
 
 	/**Méthode permettant d'afficher les 10 villes les plus peuplées d'un département saisie par l'utilisateur
 	 * l'utilisateur doit saisir le code du département

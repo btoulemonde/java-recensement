@@ -11,11 +11,10 @@ import fr.diginamic.recensement.service.Top10VillesDepartement;
 import fr.diginamic.recensement.service.Top10VillesFrance;
 import fr.diginamic.recensement.service.Top10VillesRegion;
 import fr.diginamic.recensement.utils.Connect;
-import fr.diginamic.recensement.utils.ValeurNul;
 
 public class Application {
 
-	public static void main(String[] args) throws ValeurNul {
+	public static void main(String[] args)  {
 		
 		Scanner scanner = new Scanner(System.in);
 		int choix = 0;
@@ -41,7 +40,7 @@ public class Application {
 				PopulationDepartement.traiter(scanner);
 				break;
 			case 3:
-				PopulationRegion.traiter(choix);
+				PopulationRegion.traiter(scanner);
 				break;
 			case 4:
 				Top10RégionPopulation.traiter();
