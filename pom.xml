@@ -36,21 +36,23 @@
 			<artifactId>mariadb-java-client</artifactId>
 			<version>2.4.0</version>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
 		<dependency>
-			<groupId>
-				ch.qos.logback
-			</groupId>
-				<artifactId> logback classic </artifactId>
-				<version> 1.2.3 </version>
+			<groupId>commons-io</groupId>
+			<artifactId>commons-io</artifactId>
+			<version>2.6</version>
 		</dependency>
 		<dependency>
-			<groupId> org.slf4j </groupId>
-			<artifactId> slf4j api </artifactId>
-			<version> 1.7.29 </version>
+			<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-api</artifactId>
+			<version>1.7.18</version>
+		</dependency>
+		<dependency>
+			<groupId>ch.qos.logback</groupId>
+			<artifactId>logback-classic</artifactId>
+			<version>1.2.2</version>
 		</dependency>
 	</dependencies>
-
-
 </project>
 
 

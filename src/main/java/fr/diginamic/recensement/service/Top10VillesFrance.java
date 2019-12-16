@@ -3,7 +3,6 @@ package fr.diginamic.recensement.service;
 import java.util.Scanner;
 import fr.diginamic.recensement.dao.VilleDaoJdbc;
 import fr.diginamic.recensement.entites.Ville;
-import fr.diginamic.recensement.utils.Connect;
 
 import java.util.List;
 
@@ -23,5 +22,5 @@ public class Top10VillesFrance {
 			System.out.println(villes.get(i));
 		}
 
-		Connect.connexionClose();}
+	}
 }

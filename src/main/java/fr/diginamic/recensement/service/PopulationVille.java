@@ -2,7 +2,6 @@ package fr.diginamic.recensement.service;
 
 import java.util.Scanner;
 import fr.diginamic.recensement.dao.VilleDaoJdbc;
-import fr.diginamic.recensement.utils.Connect;
 
 public class PopulationVille {
 	Scanner scanner = new Scanner(System.in);
@@ -12,14 +11,13 @@ public class PopulationVille {
 	 */
 	public static void traiter(Scanner scanner){
 		System.out.println("veuillez saisir la ville : ");
-		String choix = scanner.nextLine();
+		String choix = scanner.next();
 		
 		VilleDaoJdbc villeDao = new VilleDaoJdbc();
 		int populationVille = villeDao.populationVille(choix);
 		
 		System.out.println("la population de "+ choix +"  est de " + populationVille + " habitants");
 
-		Connect.connexionClose();
 			}
 	}
 	

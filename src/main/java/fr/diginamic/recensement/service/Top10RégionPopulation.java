@@ -3,7 +3,6 @@ package fr.diginamic.recensement.service;
 import java.util.List;
 import fr.diginamic.recensement.dao.RegionDaoJdbc;
 import fr.diginamic.recensement.entites.Region;
-import fr.diginamic.recensement.utils.Connect;
 
 public class Top10RégionPopulation {
 
@@ -19,6 +18,5 @@ public class Top10RégionPopulation {
 
 			System.out.println(regions.get(i));
 		}
-		Connect.connexionClose();
 	}
 }

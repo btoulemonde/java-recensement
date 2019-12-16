@@ -10,10 +10,12 @@ import fr.diginamic.recensement.service.Top10RégionPopulation;
 import fr.diginamic.recensement.service.Top10VillesDepartement;
 import fr.diginamic.recensement.service.Top10VillesFrance;
 import fr.diginamic.recensement.service.Top10VillesRegion;
+import fr.diginamic.recensement.utils.Connect;
+import fr.diginamic.recensement.utils.ValeurNul;
 
 public class Application {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ValeurNul {
 		
 		Scanner scanner = new Scanner(System.in);
 		int choix = 0;
@@ -28,7 +30,7 @@ public class Application {
 			System.out.println("7: Afficher les 10 villes les plus peuplées d'une région");
 			System.out.println("8: Afficher les 10 villes les plus peuplées de France");
 			System.out.println("9: Sortir");
-			String choixUser = scanner.nextLine();
+			String choixUser = scanner.next();
 			choix = Integer.parseInt(choixUser);
 
 			switch (choix) {
@@ -58,5 +60,6 @@ public class Application {
 				break;
 			}
 		}	while (choix != 9);
+		Connect.connexionClose();
 	}
 }

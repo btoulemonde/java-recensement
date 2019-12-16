@@ -47,6 +47,7 @@ public class Connect {
 		try {
 			if (connexion == null){
 			connexion = DriverManager.getConnection(url, user, password);
+			System.out.println("ouverture connexion");
 			}
 		} catch (SQLException e) {
 			System.out.println("echec de l'ouverture de la base de données");

@@ -19,8 +19,12 @@ public class DepartementDaoJdbc implements DepartementDao {
 
 	public DepartementDaoJdbc() {
 		connexion = Connect.getConnection();
+		
 	}
 
+	/* (non-Javadoc)
+	 * @see fr.diginamic.recensement.dao.DepartementDao#extraire()
+	 */
 	@Override
 	public List<Departement> extraire() {
 		int population = 0;
@@ -34,13 +38,15 @@ public class DepartementDaoJdbc implements DepartementDao {
 				String codeDpt = result.getString("CODE_DEPARTEMENT");
 				Departement departement = new Departement(codeDpt, population);
 				departements.add(departement);
-
+				
 			}
+			Connect.connexionClose();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
 		}
 		return departements;
+		
 	}
 	
 	@Override

@@ -3,7 +3,6 @@ package fr.diginamic.recensement.service;
 import java.util.List;
 import fr.diginamic.recensement.dao.DepartementDaoJdbc;
 import fr.diginamic.recensement.entites.Departement;
-import fr.diginamic.recensement.utils.Connect;
 
 public class Top10DepartementPopulation {
 	/**
@@ -18,6 +17,5 @@ public class Top10DepartementPopulation {
 
 			System.out.println(departements.get(i));
 		}
-		Connect.connexionClose();
 	}
 }
