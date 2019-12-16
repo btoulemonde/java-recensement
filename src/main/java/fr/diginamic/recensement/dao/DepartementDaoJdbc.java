@@ -40,7 +40,6 @@ public class DepartementDaoJdbc implements DepartementDao {
 				departements.add(departement);
 				
 			}
-			Connect.connexionClose();
 		} catch (SQLException e) {
 			System.out.println(e.getMessage());
 			e.printStackTrace();
